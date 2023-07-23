@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Meetings",
+  "version": "1.0",
+  "description": "Descripción de tu extensión",
+  "permissions": [
+    "https://*/*",
+    "http://*/*",
+    "identity"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+  },
+  "oauth2": {
+    "client_id": "procriptoc0016318_userpool_c0016318-dev",
+    "scopes": ["openid", "email", "profile"]
+  }
+}
