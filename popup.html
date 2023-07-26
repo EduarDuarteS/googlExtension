@@ -5,6 +5,10 @@
 </head>
 <body>
   <h2>Inicio de sesión</h2>
+  <div id="welcome-section" style="display: none;">
+    <!-- Contenido de bienvenida -->
+    <h3>Bienvenido!</h3>
+  </div>
   <form id="login-form">
     <label for="email">Correo electrónico:</label>
     <input type="email" id="email" name="email" required><br>
@@ -14,7 +18,16 @@
 
     <button type="submit">Iniciar sesión</button>
   </form>
-  <script src="amazon-cognito-identity.js"></script>
+  <div id="add-account-section" style="display: none;">
+    <h2>Agregar cuenta</h2>
+    <form id="add-account-form">
+      <!-- Campos del formulario para agregar la cuenta -->
+      <button type="submit">Agregar cuenta</button>
+    </form>
+  </div>
+  <!-- Include CryptoJS library -->
+  <script src="lib/crypto-js.js"></script>
+  <script src="lib/amazon-cognito-identity.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

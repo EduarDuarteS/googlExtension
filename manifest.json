@@ -4,9 +4,10 @@
   "version": "1.0",
   "description": "Descripción de tu extensión",
   "permissions": [
-    "https://*/*",
-    "http://*/*",
     "identity"
+  ],
+  "host_permissions": [
+    "https://qpfg5gn4rk.execute-api.us-east-2.amazonaws.com/*"
   ],
   "action": {
     "default_popup": "popup.html"
