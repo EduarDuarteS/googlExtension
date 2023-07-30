@@ -10,7 +10,7 @@
     "https://qpfg5gn4rk.execute-api.us-east-2.amazonaws.com/*"
   ],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popups/popup.html"
   },
   "icons": {
   },

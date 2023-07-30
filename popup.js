@@ -7,8 +7,8 @@ document.getElementById('login-form').addEventListener('submit', (event) => {
 
   // Configurar la región y otros detalles de AWS Cognito
   const poolData = {
-    UserPoolId: '',
-    ClientId: '',
+    UserPoolId: 'us-east-2_VWVFvffA8',
+    ClientId: '2r1mfggq9g4kcevm2f4kiu73us',
   };
 
   const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
@@ -45,6 +45,8 @@ document.getElementById('login-form').addEventListener('submit', (event) => {
 
       // Actualizar el contenido del popup después del inicio de sesión
       handleLoggedInState();
+
+
     },
     onFailure: (err) => {
       console.error('Error en el inicio de sesión', err);
@@ -53,8 +55,11 @@ document.getElementById('login-form').addEventListener('submit', (event) => {
   });
 });
 
+
+
+
 // Función para manejar el contenido del popup después del inicio de sesión
-function handleLoggedInState() {
+async function handleLoggedInState() {
   const encryptedAccessToken = sessionStorage.getItem('accessToken');
   if (encryptedAccessToken) {
     // Desencriptar el token de acceso utilizando la clave de encriptación
@@ -64,6 +69,9 @@ function handleLoggedInState() {
       // Aquí puedes mostrar un mensaje de error al usuario
       return;
     }
+
+    let popup = '/popups/login.html';
+    await chrome.action.setPopup({ popup });
 
     // Mostrar el contenido de bienvenida y ocultar el formulario de inicio de sesión
     document.getElementById('welcome-section').style.display = 'block';
@@ -143,11 +151,11 @@ function addAccount() {
   const formData = {
     "numcta": "5055404484895168",
     "pass": "mypassword",
-    "AccountName": "Eduard Bancolombia",
-    "tipoDoc": "DNI",
+    "AccountName": "Richard",
+    "tipoDoc": "CC",
     "validated": true,
     "numDoc": "1030766849",
-    "bank": "Bancolombia",
+    "bank": "Davivienda",
     "password": "myaccountpassword"
   };
 
